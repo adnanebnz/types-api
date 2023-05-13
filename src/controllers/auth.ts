@@ -85,7 +85,7 @@ export const logout = async (
     user.authentification.sessionToken = null;
     await user.save();
     res.clearCookie("accessToken");
-    return res.status(200).json("logged out").end();
+    return res.status(200).json({ message: "logged out" }).end();
   } catch (error) {
     next(error);
   }
