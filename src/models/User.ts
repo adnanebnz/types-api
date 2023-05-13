@@ -9,8 +9,8 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
     authentification: {
-      password: { type: String, required: true, select: false },
-      sessionToken: { type: String, select: false },
+      password: { type: String, required: true },
+      sessionToken: { type: String },
     },
   },
   { timestamps: true }

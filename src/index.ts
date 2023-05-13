@@ -6,7 +6,7 @@ import compression from "compression";
 import cors from "cors";
 import { config } from "dotenv";
 import mongoose from "mongoose";
-
+import router from "./router";
 config();
 mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGO_URL);
@@ -27,6 +27,8 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 //Routes
+
+app.use("/api", router());
 
 const server = http.createServer(app);
 server.listen(8800, () => {
